@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from "./src/config/db.js";
 import authRouter from "./src/routers/auth.route.js";
 import userRoute from "./src/routers/user.route.js";
+import geminiResponse from "./gemini.js";
 
 dotenv.config();
 const PORT = process.env.PORT || 9090

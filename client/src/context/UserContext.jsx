@@ -5,8 +5,10 @@ export const userDataContext = createContext();
 
 function UserContext({ children }) {
   const serverURL = "http://localhost:8080/api";
-
   const [userData, setUserData] = useState(null);
+  const [frontImage, setFrontendImage] = useState(null);
+  const [backendImage, setBackendImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleCurrentUser = async () => {
     try {
@@ -28,12 +30,44 @@ function UserContext({ children }) {
     }
   };
 
+  const getGeminiResponse = async (command) => {
+    try {
+      const token = localStorage.getItem("token");
+      const res = await axios.post(
+        `${serverURL}/user/ask-to-assitant`,
+        { command },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      return res.data
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     handleCurrentUser();
   }, []);
 
   return (
-    <userDataContext.Provider value={{ serverURL, userData, setUserData }}>
+    <userDataContext.Provider
+      value={{
+        serverURL,
+        userData,
+        setUserData,
+        frontImage,
+        setFrontendImage,
+        backendImage,
+        setBackendImage,
+        selectedImage,
+        setSelectedImage,
+        getGeminiResponse,
+      }}
+    >
       {children};
     </userDataContext.Provider>
   );
