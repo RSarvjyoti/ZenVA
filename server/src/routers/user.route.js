@@ -7,6 +7,6 @@ const userRoute = Router();
 
 userRoute.get("/current", isAuth , getCurrentUser);
 userRoute.post('/update-assistant', isAuth, upload.single("assistantImage"), updateAssistant);
-userRoute.post('/ask-to-assitant', isAuth, askToAssistant);
+userRoute.post('/ask-to-assistant', isAuth, askToAssistant);
 
 export default userRoute;

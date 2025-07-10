@@ -34,7 +34,7 @@ function UserContext({ children }) {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        `${serverURL}/user/ask-to-assitant`,
+        `${serverURL}/user/ask-to-assistant`,
         { command },
         {
           headers: {
