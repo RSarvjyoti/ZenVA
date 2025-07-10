@@ -4,7 +4,7 @@ import axios from "axios";
 export const userDataContext = createContext();
 
 function UserContext({ children }) {
-  const serverURL = "http://localhost:8080/api";
+  const serverURL = "https://zenva.onrender.com/api" // "http://localhost:8080/api";
   const [userData, setUserData] = useState(null);
   const [frontImage, setFrontendImage] = useState(null);
   const [backendImage, setBackendImage] = useState(null);
