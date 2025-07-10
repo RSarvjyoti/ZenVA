@@ -2,6 +2,10 @@
 
 ZenVA is a customizable AI voice assistant platform. Users can register, sign in, personalize their assistant's name and image, and interact with the assistant using voice commands.
 
+## Deployed 
+
+- Backend : https://zenva.onrender.com/
+- Frontend : https://zen-va.vercel.app/
 ## Project Structure
 
 ```
@@ -217,12 +221,6 @@ Uploaded assistant images are stored in the `/uploads` directory and uploaded to
 
 ---
 
-## License
-
-MIT
-
----
-
 ## Author
 
-ZenVA Team
+Sarvjyoti
